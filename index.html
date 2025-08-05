@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/favicon.ico">
     <title>🥠 Fortune Cookie 🥠</title>
     <script type="module" src="scripts/index.js"></script>
     <link rel="stylesheet" href="styles/normalize.css">
@@ -11,10 +12,20 @@
 <body>
     <main>
         <div class="button-wrapper">
-            <button id="fortune-cookie-button" class="fortune-cookie-button">Check your fortune</button>
+            <button
+                id="fortune-cookie-button"
+                class="fortune-cookie-button"
+                aria-label="check your fortune"
+            >
+                <img
+                    class="cookie-image"
+                    src="assets/fortune-cookie-76x76.png"
+                    alt="fortune cookie"
+                >
+            </button>
             <div id="fortune-wrapper" class="hide fortune-wrapper">
                 <h2 id="fortune" class="fortune"></h2>
-                <button id="reset-button">Reset</button>
+                <button id="reset-button">Crack another</button>
             </div>
         </div>
     </main>

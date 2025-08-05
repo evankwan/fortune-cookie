@@ -32,14 +32,19 @@ const app = {
         return fortunes[randomIndex];
     },
     showFortune: () => {
-        app.selectors.fortuneText.innerText = app.state.currentFortune;
-        app.selectors.fortuneWrapper.classList.remove("hide");
-        app.selectors.fortuneCookieButton.classList.add("hide");
+        app.selectors.fortuneCookieButton.classList.add("fortune-cookie-animation");
+        setTimeout(() => {
+            app.selectors.fortuneText.innerText = app.state.currentFortune;
+            app.selectors.fortuneWrapper.classList.remove("hide");
+            app.selectors.fortuneCookieButton.classList.add("hide");
+            app.selectors.fortuneCookieButton.classList.remove("fortune-cookie-animation");
+        }, 400);
     },
     handleReset: () => {
         app.selectors.fortuneText.innerText = "";
         app.selectors.fortuneWrapper.classList.add("hide");
         app.selectors.fortuneCookieButton.classList.remove("hide");
+        app.selectors.fortuneCookieButton.focus();
     }
 };
 window.addEventListener("load", app.init);

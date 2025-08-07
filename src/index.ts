@@ -38,7 +38,7 @@ const app = {
     showFortune: async() => {
         app.selectors.fortuneCookieButton.classList.add("fortune-cookie-animation");
         await sleep(150) // wait for animation
-        app.selectors.fortuneCookieImg.setAttribute("src", "assets/fortune-cookie-broken-76x76.png")
+        app.selectors.fortuneCookieImg.setAttribute("src", "assets/fortune-cookie-broken-76x84.png")
         await sleep(150) // wait for animation
         await sleep(200) // allow opened cookie to show briefly
         app.selectors.fortuneText.innerText = app.state.currentFortune

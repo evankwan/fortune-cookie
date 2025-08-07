@@ -46,7 +46,7 @@ const app = {
     showFortune: () => __awaiter(void 0, void 0, void 0, function* () {
         app.selectors.fortuneCookieButton.classList.add("fortune-cookie-animation");
         yield sleep(150); // wait for animation
-        app.selectors.fortuneCookieImg.setAttribute("src", "assets/fortune-cookie-broken-76x76.png");
+        app.selectors.fortuneCookieImg.setAttribute("src", "assets/fortune-cookie-broken-76x84.png");
         yield sleep(150); // wait for animation
         yield sleep(200); // allow opened cookie to show briefly
         app.selectors.fortuneText.innerText = app.state.currentFortune;

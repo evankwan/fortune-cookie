@@ -15,6 +15,7 @@ const app = {
     init: (): void => {
         app.initializeSelectors()
         app.initializeListeners()
+        console.log("new build")
     },
     initializeSelectors: (): void => {
         app.selectors.fortuneCookieButton = document.getElementById("fortune-cookie-button")

@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- page info start -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="assets/favicon.ico">
     <title>Fortune Cookie</title>
-    <script type="module" src="scripts/index.js"></script>
+    <!-- page info end -->
+
+    <!-- styles start -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/index.css">
+    <!-- styles end -->
+
+    <!-- font start -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Loop:ital@0;1&display=swap" rel="stylesheet">
+    <!-- font end -->
+
+    <script type="module" src="scripts/index.js"></script>
 </head>
 <body>
     <main>
@@ -26,7 +38,15 @@
             </button>
             <div id="fortune-wrapper" class="hide fortune-wrapper">
                 <h2 id="fortune" class="fortune"></h2>
-                <button id="reset-button">Crack another</button>
+                <svg style="display: none;">
+                    <defs>
+                        <filter id="noise">
+                            <feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="4" />
+                            <feDisplacementMap in="SourceGraphic" scale="2" />
+                        </filter>
+                    </defs>
+                </svg>
+                <button id="reset-button" class="reset-button">Crack another</button>
             </div>
         </div>
     </main>

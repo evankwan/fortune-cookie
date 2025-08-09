@@ -43,22 +43,29 @@ const app = {
         const randomIndex = Math.floor(Math.random() * fortunes.length);
         return fortunes[randomIndex];
     },
-    showFortune: () => __awaiter(void 0, void 0, void 0, function* () {
+    showFortuneOpeningAnimation: () => __awaiter(void 0, void 0, void 0, function* () {
         app.selectors.fortuneCookieButton.classList.add("fortune-cookie-animation");
         yield sleep(150); // wait for animation
         app.selectors.fortuneCookieImg.setAttribute("src", "assets/fortune-cookie-broken-76x84.png");
         yield sleep(150); // wait for animation
+    }),
+    showFortune: () => __awaiter(void 0, void 0, void 0, function* () {
+        yield app.showFortuneOpeningAnimation();
         yield sleep(200); // allow opened cookie to show briefly
         app.selectors.fortuneText.innerText = app.state.currentFortune;
-        app.selectors.fortuneWrapper.classList.remove("hide");
         app.selectors.fortuneCookieButton.classList.add("hide");
+        app.selectors.fortuneWrapper.classList.remove("hide");
+        app.selectors.fortuneText.classList.add("fortune-text-animation");
         app.selectors.fortuneCookieButton.classList.remove("fortune-cookie-animation");
+        app.selectors.resetButton.classList.add("reset-button-fade-in");
     }),
     handleReset: () => {
         app.selectors.fortuneCookieImg.setAttribute("src", "assets/fortune-cookie-76x76.png");
         app.selectors.fortuneText.innerText = "";
         app.selectors.fortuneWrapper.classList.add("hide");
         app.selectors.fortuneCookieButton.classList.remove("hide");
+        app.selectors.fortuneText.classList.remove("fortune-text-animation");
+        app.selectors.resetButton.classList.remove("reset-button-fade-in");
         app.selectors.fortuneCookieButton.focus();
     }
 };

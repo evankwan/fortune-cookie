@@ -1,7 +1,19 @@
+* {
+    font-family: "Zen Loop", cursive;
+    font-weight: 700;
+    font-style: normal;
+}
+
+main {
+    overflow: hidden;
+}
+
 .button-wrapper {
     position: relative;
-    width: 100vw;
+    width: 85%;
+    max-width: 1200px;
     height: 100vh;
+    margin: 0 auto;
 
     display: flex;
     flex-direction: column;
@@ -29,6 +41,7 @@
 .hide {
     display: none;
     visibility: hidden;
+    appearance: none;
 }
 
 .fortune-wrapper {
@@ -41,14 +54,38 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    transition: transform 0.3s ease-in-out;
+    font-size: 1.5rem;
+    width: 100%;
 }
 
 .fortune {
     margin: 0 auto;
+    overflow-wrap: normal;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #333;
+    filter: url(#noise);
+}
+
+.fortune-text-animation {
+    animation: 0.3s ease-in-out 0s 1 fortune-text-animation;
 }
 
 .fortune-cookie-animation {
     animation: 0.15s ease-in-out 0s 1 fortune-cookie-open, 0.15s ease-in-out 0.15s 1 fortune-cookie-open-2;
+}
+
+.reset-button {
+    all: unset;
+    padding: 0.25rem;
+    border-bottom: 1px solid #333;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.reset-button-fade-in {
+    opacity: 1;
 }
 
 @keyframes fortune-cookie-open {
@@ -63,7 +100,17 @@
 
 @keyframes fortune-cookie-open-2 {
     from {
-        transform: scale(0.6)
+        transform: scale(0.6);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes fortune-text-animation {
+    from {
+        transform: scale(0.25);
     }
 
     to {

@@ -1,4 +1,4 @@
-import fortunes from "./fortunes.js"
+import { Fortune, fortunes } from "./fortunes.js"
 import { sleep } from "./utils/index.js"
 
 const app = {
@@ -31,7 +31,7 @@ const app = {
         app.state.currentFortune = app.generateFortune()
         app.showFortune()
     },
-    generateFortune: (): string => {
+    generateFortune: (): Fortune => {
         const randomIndex = Math.floor(Math.random() * fortunes.length)
         return fortunes[randomIndex]
     },

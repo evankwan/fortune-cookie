@@ -4,7 +4,12 @@ export enum FORTUNE_TYPE {
     MISFORTUNE = "misfortune"
 }
 
-export default [
+export type Fortune = {
+    text: string;
+    type: FORTUNE_TYPE;
+}
+
+export const fortunes = [
     {
         text: 'An old friend will send you a meme today. Cherish it.',
         type: FORTUNE_TYPE.NORMAL

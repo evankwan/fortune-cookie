@@ -1,6 +1,6 @@
 * {
     font-family: "Zen Loop", cursive;
-    font-weight: 700;
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -64,8 +64,45 @@ main {
     overflow-wrap: normal;
     text-align: center;
     padding: 8px;
-    border: 1px solid #333;
+    border: 1px solid #222;
     filter: url(#noise);
+}
+
+.reset-button {
+    all: unset;
+    padding: 0.25rem;
+    border-bottom: 1px solid #222;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fortune-text-misfortune {
+    font-family: "Zen Loop", cursive;
+    color: #bf0000;
+    border: 2px solid #bf0000;
+    font-weight: 700;
+}
+
+.reset-button-misfortune {
+    border-bottom: 2px solid #bf0000;
+    color: #bf0000;
+    font-weight: 700;
+}
+
+.fortune-text-dev {
+    font-family: monospace;
+    font-size: 1rem;
+    border: 1px solid rgb(23, 247, 23);
+    background: #222;
+}
+
+.dev-mode {
+    background: #222;
+    color: rgb(23, 247, 23);
+}
+
+.fortune-text-normal {
+    font-family: "Zen Loop", cursive;
 }
 
 .fortune-text-animation {
@@ -74,14 +111,6 @@ main {
 
 .fortune-cookie-animation {
     animation: 0.15s ease-in-out 0s 1 fortune-cookie-open, 0.15s ease-in-out 0.15s 1 fortune-cookie-open-2;
-}
-
-.reset-button {
-    all: unset;
-    padding: 0.25rem;
-    border-bottom: 1px solid #333;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
 }
 
 .reset-button-fade-in {

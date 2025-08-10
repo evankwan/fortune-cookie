@@ -44,7 +44,7 @@ const app = {
     showFortune: async(): Promise<void> => {
         await app.showFortuneOpeningAnimation()
         await sleep(200) // allow opened cookie to show briefly
-        app.selectors.fortuneText.innerText = app.state.currentFortune
+        app.selectors.fortuneText.innerText = app.state.currentFortune.text
         app.selectors.fortuneCookieButton.classList.add("hide")
         app.selectors.fortuneWrapper.classList.remove("hide")
         app.selectors.fortuneText.classList.add("fortune-text-animation")
